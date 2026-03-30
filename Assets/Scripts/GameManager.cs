@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     private float worldMovingSpeed;
     private float elapsedTime;
     private int difficultyLevel;
+    private bool isGameRunning;
 
     public event EventHandler OnScoreChange;
     public event EventHandler OnGamePause;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour {
         Instance = this;
         score = 0;
         difficultyLevel = 0;
+        isGameRunning = false;
     }
 
     private void Start() {
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void HandleDifficulty() {
+        if (!isGameRunning) return;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= 5) {
             if (worldMovingSpeed < MAX_WORLD_MOVING_SPEED) {
@@ -86,10 +89,12 @@ public class GameManager : MonoBehaviour {
 
             case Bird.State.Running:
                 worldMovingSpeed = INITIAL_WORLD_MOVING_SPEED;
+                isGameRunning = true;
                 break;
 
             case Bird.State.GameOver:
                 worldMovingSpeed = 0f;
+                isGameRunning = false;
                 OnGameOver?.Invoke(this, TrySetHighScore());
                 
                 break;
