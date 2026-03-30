@@ -83,8 +83,30 @@
                 },
                 {
                     "name": "",
+                    "id": "acfdf872-c135-46a6-b4b2-fb2329f797bb",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "70a70051-5ef5-408b-b24a-9ec0ec75d97b",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eac6deb1-976f-422f-81ba-48c835b2edf5",
+                    "path": "<Touchscreen>/{Back}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
